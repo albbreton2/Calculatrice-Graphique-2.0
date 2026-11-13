@@ -22,7 +22,7 @@ class Visuel(ctk.CTkFrame):
         haut = ctk.CTkFrame(self)
         haut.grid(row = 0, column =0, columnspan =3, sticky = "ew")
         ctk.CTkButton(haut, text= "☰", width = 40, command = self.ouvrir_menu).grid(row=0, column=0, padx=5, pady=5)
-        ctk.CTkLabel(haut, text="Calculatrice graphique", font=("Arial", 22)).grid(row=0, column=1, padx=10, sticky="w")
+        ctk.CTkLabel(haut, text="Calculatrice graphique 2.0", font=("Arial", 22)).grid(row=0, column=1, padx=10, sticky="w")
         verticale = ctk.CTkFrame(self, width = 50)
         verticale.grid(row =1, column =0, sticky= "ns")
         ctk.CTkButton(verticale, text="+", width=40, command = self.ajouter_ligne).grid(row=0, column=0, padx=5, pady=5)
@@ -129,6 +129,8 @@ class Visuel(ctk.CTkFrame):
         self.graphique.effacer()
 
         for x, y in resultats:
+            if type(x)==tuple:
+                self.graphique.tracer_implicite(x[0],x[1],y)
             self.graphique.tracer(x, y)
 
         self.redessiner_geometrie()

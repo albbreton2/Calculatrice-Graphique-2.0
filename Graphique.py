@@ -36,6 +36,10 @@ class Graphique(ctk.CTkFrame):
         self.ax.plot(xs, ys, color=couleur)
         self.canvas.draw()
 
+    def tracer_implicite(self, xs, ys, eq, couleur="tab:blue"):
+        self.ax.contour(xs,ys,eq,[0])
+        self.canvas.draw()
+
     def effacer(self):
         self.ax.clear()
         self.artistes_geo = []

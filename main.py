@@ -13,7 +13,7 @@ class MainApp(ctk.CTk):
     def __init__(self):
         super().__init__()
 
-        self.title("Calculatrice graphique")
+        self.title("Calculatrice graphique 2.0")
         self.geometry("1280x800")
         self.grid_columnconfigure(0, weight=1)
         self.grid_rowconfigure(0, weight=1)
